@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi không kỳ hạn</title>
+</head>
+<body>
+    <h2>Upload file Excel giao dịch</h2>
+
+    <form action="/calculate" method="post" enctype="multipart/form-data">
+        <input type="file" name="excel_file" accept=".xlsx,.xls" required>
+        <br><br>
+        <button type="submit">Tính toán</button>
+    </form>
+
+    {% if tables %}
+        <h3>Kết quả</h3>
+        {{ tables|safe }}
+    {% endif %}
+</body>
+</html>
